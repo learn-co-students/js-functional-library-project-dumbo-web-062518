@@ -163,18 +163,9 @@ fi = (function() {
         for (var i = 0; i < coll.length; i++){
           results.push({item: coll[i], result: cb(coll[i])})
         }
-        // const mappedResults = []
-        // for (var k in coll){
-        //   mappedResults.push(coll[k])
-        // }
-        // debugger;
-        // if (typeof cb(coll[0]) === 'string'){
-        //   return results.sort((a, b) => a.item.localCompare(b.item)).map(x => x.item)
-        // } else {
           sorted = results.sort((a, b) => a.result - b.result)
           final = sorted.map(x => x.item)
           return final
-        // }
       },
 
       functions: function(obj){
